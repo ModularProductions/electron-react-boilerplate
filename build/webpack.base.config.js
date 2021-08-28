@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require('webpack');
 const nodeExternals = require("webpack-node-externals");
 
 const envName = (env) => {
@@ -47,5 +48,10 @@ module.exports = env => {
         }
       ]
     },
+    plugins: [new webpack.HotModuleReplacementPlugin()],
+    devServer: {
+      contentBase: path.resolve(__dirname, './dist'),
+      hot: true
+    }
   };
 };
