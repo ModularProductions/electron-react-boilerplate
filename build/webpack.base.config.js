@@ -28,6 +28,7 @@ module.exports = env => {
     },
     externals: [nodeExternals()],
     resolve: {
+      extensions: ['*', '.js', '.jsx'],
       alias: {
         env: path.resolve(__dirname, `../config/env_${envName(env)}.json`)
       }
@@ -36,7 +37,7 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           use: ["babel-loader"]
         },
