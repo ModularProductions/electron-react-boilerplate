@@ -15,6 +15,8 @@ import createWindow from "./helpers/window";
 // in config/env_xxx.json file.
 import env from "env";
 
+import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer';
+
 // Save userData in separate folders for each environment.
 // Thanks to this you can use production and development versions of the app
 // on same machine like those are two separate apps.
@@ -44,6 +46,15 @@ const initIpc = () => {
 app.on("ready", () => {
   setApplicationMenu();
   initIpc();
+  if (env.name === "development") {
+    const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
+    const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
+    installExtension(
+      extensions,
+      {loadExtensionOptions: {allowFileAccess: true}, forceDownload: forceDownload}
+      )
+      .catch(console.log);
+  }
 
   const mainWindow = createWindow("main", {
     width: 1000,
@@ -68,7 +79,7 @@ app.on("ready", () => {
   );
 
   if (env.name === "development") {
-    mainWindow.openDevTools();
+    mainWindow.openDevTools({ mode: "detach" });
   }
 });
 

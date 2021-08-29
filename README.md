@@ -1,3 +1,13 @@
+This boilerplate was bootstrapped using
+
+  [electron-boilerplate] (https://github.com/szwacz/electron-boilerplate.git)
+  
+as its foundation, and further extended using
+
+  [Electron Apps Made Easy with CRA and Electron Forge] (https://dev.to/mandiwise/electron-apps-made-easy-with-create-react-app-and-electron-forge-560e)
+
+#########################
+
 # electron-boilerplate
 
 Minimalistic, very easy to understand boilerplate for [Electron runtime](https://www.electronjs.org/). Tested on Windows, macOS and Linux.  
