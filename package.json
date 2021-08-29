@@ -1,11 +1,13 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "description": "Starter for your Electron application",
+  "name": "electron-react-boilerplate",
+  "productName": "Electron-React Boilerplate",
+  "description": "Starter for your Electron/React application",
   "version": "0.0.0",
   "private": true,
-  "author": "Mr. Gumby <mr.gumby@example.com>",
-  "copyright": "© 2017, Gumby inc.",
+  "author": "some nerd",
+  "copyright": "© 2O2X, Some Nerd",
+  "keywords": [],
+  "license": "GNU GPLv3",
   "homepage": "./",
   "main": "app/main.js",
   "build": {
