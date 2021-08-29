@@ -4,7 +4,17 @@ This boilerplate was bootstrapped using
   
 as its foundation, and further extended using
 
-  [Electron Apps Made Easy with CRA and Electron Forge] (https://dev.to/mandiwise/electron-apps-made-easy-with-create-react-app-and-electron-forge-560e)
+  [How to Add React to an Existing Webpack Project] 
+    (https://www.polynique.com/web-development/how-to-add-react-to-an-existing-webpack-project/)
+    - adding React
+
+  [Electron Apps Made Easy with CRA and Electron Forge] 
+    (https://dev.to/mandiwise/electron-apps-made-easy-with-create-react-app-and-electron-forge-560e)
+    - devTools
+
+  [github comment]
+    (https://github.com/MarshallOfSound/electron-devtools-installer/issues/174#issuecomment-787514657)
+    - adds properly loading React and Redux dev tools
 
 #########################
 
