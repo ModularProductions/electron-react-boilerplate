@@ -2,7 +2,7 @@ import "./stylesheets/main.css";
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const App = () => (
+const App = (props) => (
   <div
     style={{
       display: 'flex',
@@ -17,7 +17,8 @@ const App = () => (
   </div>
 )
 
-ReactDOM.render(<App />, document.getElementById('app'))
+export default App;
+
 // Everything below is just a demo. You can delete all of it.
 
 // import { ipcRenderer } from "electron";

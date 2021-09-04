@@ -6,7 +6,7 @@ module.exports = env => {
   return merge(base(env), {
     entry: {
       main: "./src/main.js",
-      app: "./src/app.js"
+      app: "./src/index.js"
     },
     output: {
       publicPath: '',

@@ -1,6 +1,6 @@
 const path = require("path");
-// const webpack = require('webpack');
 const nodeExternals = require("webpack-node-externals");
+const htmlWebPackPlugin = require('html-webpack-plugin');
 
 const envName = (env) => {
   if (env.production) {
@@ -43,15 +43,22 @@ module.exports = env => {
           use: ["babel-loader"]
         },
         {
+          test: /\.html$/,
+          use: [
+              { loader: "html-loader" }
+          ]
+        },
+        {
           test: /\.css$/,
           use: ["style-loader", "css-loader"]
         }
       ]
-    // },
-    // plugins: [new webpack.HotModuleReplacementPlugin()],
-    // devServer: {
-    //   contentBase: path.resolve(__dirname, './dist'),
-    //   hot: true
-    }
+    },
+    plugins: [
+      new htmlWebPackPlugin({
+          template: "./src/index.html",
+          fileName: "./index.html"
+      })
+    ]
   };
 };

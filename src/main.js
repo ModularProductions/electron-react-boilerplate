@@ -43,7 +43,7 @@ const initIpc = () => {
   });
 };
 
-app.on("ready", () => {
+app.whenReady().then(() => {
   setApplicationMenu();
   initIpc();
   if (env.name === "development") {
@@ -53,7 +53,8 @@ app.on("ready", () => {
       extensions,
       {loadExtensionOptions: {allowFileAccess: true}, forceDownload: forceDownload}
       )
-      .catch(console.log);
+      .then((name) => console.log(`Added Extension:  ${name}`))
+      .catch((err) => console.log('An error occurred: ', err));
   }
 
   const mainWindow = createWindow("main", {
@@ -72,7 +73,7 @@ app.on("ready", () => {
 
   mainWindow.loadURL(
     url.format({
-      pathname: path.join(__dirname, "app.html"),
+      pathname: path.join(__dirname, "index.html"),
       protocol: "file:",
       slashes: true
     })
